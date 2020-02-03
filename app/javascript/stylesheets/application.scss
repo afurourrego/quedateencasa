@@ -1,2 +1,18 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import 'materialize-css/dist/css/materialize';
+
+//custom color variables
+$primary-color: #3e4e9e !default;
+$primary-color-light: #717ad0 !default;
+$primary-color-dark: #00276f !default;
+
+$active_row: #466193 !default;
+
+$secondary-color: #3e4e9e !default;
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+$link-color: color("light-blue", "darken-1") !default;
+
+//
+@import "~materialize-css/sass/materialize.scss";
+@import 'shared/select_two';
