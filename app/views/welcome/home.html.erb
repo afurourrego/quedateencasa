@@ -1,2 +1,8 @@
 <h1>Welcome#home</h1>
 <p>Find me in app/views/welcome/home.html.erb</p>
+
+<%= link_to(destroy_user_session_path, class: 'btn-large',  method: 'delete') do %>
+  <i class="large material-icons">keyboard_tab</i>
+<% end %>
+
+<%= render partial: 'devise/invitations/new' %>
