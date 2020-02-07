@@ -4,3 +4,5 @@
 <%= link_to(destroy_user_session_path, class: 'btn-large',  method: 'delete') do %>
   <i class="large material-icons">keyboard_tab</i>
 <% end %>
+
+<%= render partial: 'devise/invitations/new' %>
