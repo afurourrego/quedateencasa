@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :role, :level, presence: true
 
   enum role: { 'super_admin': 1 }
   LEVEL = [1].freeze
