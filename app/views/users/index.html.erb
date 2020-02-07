@@ -45,4 +45,6 @@
   </tbody>
 </table>
 
-<%= render partial: 'devise/invitations/new' %>
+<% if can? :create, User %>
+  <%= render partial: 'devise/invitations/new' %>
+<% end %>
