@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
+  enum role: { 'super_admin': 1 }
+  LEVEL = [1].freeze
+
   private
 
   def self.current
