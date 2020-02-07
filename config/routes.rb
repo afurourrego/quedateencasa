@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { invitations: 'invitations' }
   get 'welcome/home'
 
   root 'welcome#home'
