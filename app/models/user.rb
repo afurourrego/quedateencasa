@@ -10,6 +10,23 @@ class User < ApplicationRecord
   enum role: { 'super_admin': 1 }
   LEVEL = [1].freeze
 
+  def self.search(users, params)
+    unless params['email'].blank?
+      search = "%#{params['email'].delete(' ')}%"
+      users = users.where('lower(email) LIKE ?', search.downcase)
+    end
+
+    unless params['role'].blank?
+      roles = params[:role]
+      roles.each_with_index { |value, index| roles[index] = value.presence }
+      users = users.where(role: roles)
+    end
+
+    users = users.where(level: params['level']) unless params['level'].blank?
+
+    users
+  end
+
   private
 
   def self.current

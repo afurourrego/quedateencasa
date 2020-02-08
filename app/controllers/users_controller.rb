@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :set_current_user
 
   def index
-    @users = User.all
+    @users = @users = User.search(@users, user_params_search)
   end
 
   def show
@@ -34,11 +34,11 @@ class UsersController < ApplicationController
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
-
     def user_params
       params.require(:user).permit(:email, :role, :level)
+    end
+
+    def user_params_search
+      params.permit(:email, :role, :level)
     end
 end
