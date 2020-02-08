@@ -17,7 +17,7 @@ class InvitationsController < Devise::InvitationsController
       if method(:after_invite_path_for).arity == 1
         respond_with resource, location: after_invite_path_for(current_inviter)
       else
-        respond_with resource, location: after_invite_path_for(current_inviter, resource)
+        respond_with resource, location: users_path
       end
     else
       respond_with_navigational(resource) { render :new }
