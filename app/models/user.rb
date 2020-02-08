@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   def self.search(users, params)
     unless params['email'].blank?
-      search = "%#{params['email'].delete(' ')}%"
+      search = "%#{params['email']&.strip}%"
       users = users.where('lower(email) LIKE ?', search.downcase)
     end
 
