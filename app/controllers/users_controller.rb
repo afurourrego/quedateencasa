@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :set_current_user
 
   def index
-    @users = @users = User.search(@users, user_params_search)
+    @users = User.search(@users, user_params_search)
   end
 
   def show
