@@ -5,3 +5,4 @@
            role: 'super_admin',
            level: 1).save(validate: false)
 end
+p 'Seed Completed'
