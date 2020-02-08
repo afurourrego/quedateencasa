@@ -1,5 +1,24 @@
 <h1>Users</h1>
+<div class="col s12">
+  <%= form_tag nil, method: :get do %>
+    <div class="input-field col s12 m3">
+      <%= text_field_tag 'email', params[:email] %>
+      <%= label_tag :email,'email'%>
+    </div>
+    <div class="input-field col s12 m3">
+      <%= text_field_tag 'role', params[:role] %>
+      <%= label_tag :role,'role'%>
+    </div>
+    <div class="input-field col s12 m3">
+      <%= text_field_tag 'level', params[:level] %>
+      <%= label_tag :level,'level'%>
+    </div>
 
+    <%= button_tag :button, type: :submit do %>
+      search
+    <% end %>
+  <% end %>
+</div>
 <table>
   <thead>
     <tr>
