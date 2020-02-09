@@ -50,9 +50,13 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  gem 'assert_difference'
   gem 'selenium-webdriver'
+  gem 'sentient_user'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'shoulda-matchers'
+  gem 'email_spec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
