@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
@@ -7,11 +9,9 @@ class UsersController < ApplicationController
     @users = User.search(@users, user_params_search)
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     respond_to do |format|
@@ -34,11 +34,12 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:email, :role, :level)
-    end
 
-    def user_params_search
-      params.permit(:email, :role, :level)
-    end
+  def user_params
+    params.require(:user).permit(:email, :role, :level)
+  end
+
+  def user_params_search
+    params.permit(:email, :role, :level)
+  end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Levels
   module SuperAdmin
     def super_admin_rules

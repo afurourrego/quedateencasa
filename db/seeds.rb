@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ['capjuancode@tawa.com', 'dayeane@devappstudio.com', 'cristhian.u@devappstudio.com'].each do |email|
   User.new(email: email,
            password: '123456',

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module UsersHelper
   def user_status(user)
     if user.invitation_accepted?

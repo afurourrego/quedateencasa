@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class InvitationsController < Devise::InvitationsController
   before_action :set_current_user
 
@@ -13,7 +15,9 @@ class InvitationsController < Devise::InvitationsController
 
     if resource_invited
       @user.update_attributes(user_params)
-      set_flash_message :notice, :send_instructions, email: resource.email if is_flashing_format? && resource.invitation_sent_at
+      if is_flashing_format? && resource.invitation_sent_at
+        set_flash_message :notice, :send_instructions, email: resource.email
+      end
       if method(:after_invite_path_for).arity == 1
         respond_with resource, location: after_invite_path_for(current_inviter)
       else
@@ -27,5 +31,4 @@ class InvitationsController < Devise::InvitationsController
   def user_params
     params.require(:user).permit(:email, :role, :level)
   end
-
 end
