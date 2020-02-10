@@ -37,6 +37,7 @@ group :development, :test do
 
   gem 'pry-nav', github: 'nixme/pry-nav'
   gem 'pry-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
