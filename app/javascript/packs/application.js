@@ -17,3 +17,19 @@ import 'materialize-css/dist/js/materialize';
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+document.addEventListener('turbolinks:load', () => {
+  M.updateTextFields();
+
+  const slidOutMenu = document.querySelector('#slide-out');
+
+  if (slidOutMenu) M.Sidenav(slidOutMenu, {});
+});
+
+document.addEventListener('turbolinks:before-visit', () => {
+  const slidOutMenu = document.querySelector('#slide-out');
+
+  if (slidOutMenu) { let slidOutMenuInstance = M.Sidenav.getInstance(slidOutMenu); }
+
+  if (slidOutMenuInstance) slidOutMenuInstance.destroy();
+});
