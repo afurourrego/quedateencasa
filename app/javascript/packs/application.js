@@ -23,7 +23,7 @@ document.addEventListener('turbolinks:load', () => {
 
   let slidOutMenu = document.querySelector('#slide-out');
 
-  if (slidOutMenu) M.Sidenav(slidOutMenu, {});
+  if (slidOutMenu) new M.Sidenav(slidOutMenu, {});
 });
 
 document.addEventListener('turbolinks:before-visit', () => {
