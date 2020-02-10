@@ -1,0 +1,7 @@
+AllCops:
+  Exclude:
+    - 'db/migrate/*'
+    - 'db/schema.rb'
+    - 'node_modules/node-sass/src/libsass/contrib/*'
+    - 'node_modules/node-sass/src/libsass/*'
+    - 'node_modules/rails-erb-loader/erb_transformer.rb'
