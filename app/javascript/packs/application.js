@@ -36,3 +36,5 @@ document.addEventListener('turbolinks:before-visit', () => {
 
   if (slidOutMenuInstance) slidOutMenuInstance.destroy();
 });
+
+import "controllers"
