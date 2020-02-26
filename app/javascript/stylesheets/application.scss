@@ -17,6 +17,7 @@ $link-color: color("light-blue", "darken-1") !default;
 @import "~materialize-css/sass/materialize.scss";
 @import 'shared/select_two.scss';
 @import 'welcome/home.scss';
+@import 'shared/choices.scss';
 
 .scrollable {
   overflow: scroll;
