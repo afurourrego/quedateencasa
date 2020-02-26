@@ -10,11 +10,12 @@
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-controller="application">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, id: "flash_#{name}" %>
     <% end %>
-
-    <%= yield %>
+    <div data-target="application.viewPort">
+      <%= yield %>
+    </div>
   </body>
 </html>
