@@ -10,31 +10,5 @@ require('channels');
 
 import '../stylesheets/application';
 import 'materialize-css/dist/js/materialize';
-
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
-
-document.addEventListener('turbolinks:load', () => {
-  M.updateTextFields();
-
-  let slidOutMenu = document.querySelector('#slide-out');
-
-  if (slidOutMenu) new M.Sidenav(slidOutMenu, {});
-});
-
-document.addEventListener('turbolinks:before-visit', () => {
-  let slidOutMenuInstance;
-  let slidOutMenu;
-
-  slidOutMenu = document.querySelector('#slide-out');
-
-  if (slidOutMenu) { slidOutMenuInstance = M.Sidenav.getInstance(slidOutMenu); }
-
-  if (slidOutMenuInstance) slidOutMenuInstance.destroy();
-});
-
-import "controllers"
+import 'choices.js/public/assets/scripts/choices.min.js';
+import 'controllers';
