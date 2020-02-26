@@ -7,9 +7,9 @@
     <%= f.text_field :email %>
   </div>
 
-  <div class="field">
-    <%= f.label :role %>
-    <%= f.text_field :role %>
+  <div class="input-field col s4">
+    <%= f.collection_select :role, User.roles, :first, ->(role) { role.first }, {}, { class: 'js-choice', multiple: true } %>
+    <%= f.label :role, 'role', class: 'active' %>
   </div>
 
   <div class="field">
