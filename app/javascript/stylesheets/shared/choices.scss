@@ -40,7 +40,6 @@
 
       &.choices__item--selectable, .is-highlighted {
         background-color: $secondary-color;
-
         &:after {
           display: none;
         }
@@ -56,12 +55,18 @@
 
       .choices__input, .choices__input--cloned {
         height: 44px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 72166f1... fix with
         &:not([aria-activedescendant]), &[aria-activedescendant] {
           min-width: 1ch;
           width: 1ch;
         }
       }
     }
+  }
+  .choices__list--dropdown .choices__item--selectable{
+    padding-right: 10px;
   }
 }
