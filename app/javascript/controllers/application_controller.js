@@ -23,7 +23,9 @@ export default class extends Controller {
 
     if (slidOutMenu)  new M.Sidenav(slidOutMenu);
     if (choiceSelect) { choiceSelect.forEach((element, index, array) => {
-        this.choiceInstanceList.push(new Choices(element, { removeItemButton: true }));
+        let options = {};
+        if (element.multiple) options.removeItemButton = true;
+        this.choiceInstanceList.push(new Choices(element, options));
       }, this);
     };
   }
