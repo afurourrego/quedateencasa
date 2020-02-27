@@ -55,10 +55,6 @@
 
       .choices__input, .choices__input--cloned {
         height: 44px;
-<<<<<<< HEAD
-
-=======
->>>>>>> 72166f1... fix with
         &:not([aria-activedescendant]), &[aria-activedescendant] {
           min-width: 1ch;
           width: 1ch;
