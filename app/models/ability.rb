@@ -20,6 +20,10 @@ class Ability
 
   def guest_user_rules
     cannot :manage, User
+    cannot :manage, Country
+    cannot :manage, State
+    cannot :manage, City
+    cannot :manage, Location
   end
 
   def as_json
