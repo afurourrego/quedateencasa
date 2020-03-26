@@ -21,6 +21,10 @@
   &.card_action_title {
     background-color: $primary-color !important;
     border-radius: 0 0 0 0 !important;
+
+    &.with_out_title {
+      height: 48px;
+    }
   }
 
   &.card_item_title {

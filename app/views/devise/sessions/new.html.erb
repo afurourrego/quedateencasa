@@ -1,26 +1,45 @@
-<h2>Log in</h2>
+<div class="card_container">
+  <span class="helper"></span>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="col s12 m6 offset-m3">
+      <div class="card">
+        <div class="card-action card_action_title with_out_title">
+          <%= f.button :button, type: :submit, class:"actions waves-effect waves-light btn right action_button_card action_button_card_first_right" do %>
+          INICIAR SESION
+          <% end %>
+        </div>
+        <div class="card-content">
+          <div class="row">
+            <div class="col s12 m10 offset-m1">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+              <div class="field">
+                <%= f.label :email, 'Email' %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+              </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+              <div class="field">
+                <%= f.label :password, 'Contraseña' %>
+                <%= f.password_field :password, autocomplete: "current-password" %>
+              </div>
+
+              <% if devise_mapping.rememberable? %>
+                <div class="col s6 no_border check_box_remember">
+                  <label>
+                    <%= f.check_box :remember_me %>
+                    <span>
+                      <%= f.label :remember_me, 'Recordarme' %>
+                    </span>
+                  </label>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="center">
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

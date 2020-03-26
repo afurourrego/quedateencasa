@@ -33,7 +33,7 @@
                                                    class: "filter-metadata-selector apps autocomplete",
                                                    autocomplete: 'off',
                                                    data: { list_names: State.hash_list_names.to_json }) %>
-            <%= label_tag :state,'Estado'%>
+            <%= label_tag :state,'Departamento'%>
           </div>
           <div class="input-field col s6 m3">
             <%= text_field_tag(:local_search_city, params[:local_search]&.fetch(:city),
