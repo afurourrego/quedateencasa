@@ -1,0 +1,41 @@
+<div class="navbar-fixed">
+  <nav class="nav-dev_app">
+    <% if user_signed_in? %>
+      <a href="#" data-target="slide-out" class="sidenav-trigger left"><i class="material-icons">menu</i></a>
+    <% end %>
+    <div class="nav-wrapper container">
+      <!-- <a href="/" class="brand-logo center" data-turbolinks='false'>< %= image_tag 'logo.svg', class:'brand__logo' %></a> -->
+    </div>
+  </nav>
+</div>
+
+<% if user_signed_in? %>
+  <ul id="slide-out" class="sidenav z-depth-2">
+    <div class="slide_user_options">
+      <%= link_to(destroy_user_session_path, method: 'delete') do %>
+        <i class="material-icons slide_nav_icons slide_mobile_icons right">keyboard_tab</i>
+      <% end %>
+      <%= link_to(edit_user_registration_path) do %>
+        <i class="material-icons slide_nav_icons slide_mobile_icons right">mode_edit</i>
+      <% end %>
+    </div>
+
+    <li><div class="divider divider_first"></div></li>
+
+    <li>
+      <%= link_to welcome_home_path do %>
+        <i class="material-icons slide_nav_icons slide_mobile_icons">home</i>
+        <span class='local_text'>Home</span>
+      <% end %>
+    </li>
+    <li><div class="divider"></div></li>
+
+    <li>
+      <%= link_to users_path do %>
+        <i class="material-icons slide_nav_icons slide_mobile_icons">account_circle</i>
+        <span class='local_text'>Users</span>
+      <% end %>
+    </li>
+    <li><div class="divider"></div></li>
+  </ul>
+<% end %>

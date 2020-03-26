@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+  <ul id="slide-out" class="sidenav sidenav-fixed z-depth-2" >
+    <li>
+      <%= link_to welcome_home_path do %>
+        <i class="material-icons slide_nav_icons">home</i>
+      <% end %>
+    </li>
+    <li><div class="divider"></div></li>
+
+    <li>
+      <%= link_to users_path do %>
+        <i class="material-icons slide_nav_icons">account_circle</i>
+      <% end %>
+    </li>
+    <li><div class="divider"></div></li>
+  </ul>
+<% end %>

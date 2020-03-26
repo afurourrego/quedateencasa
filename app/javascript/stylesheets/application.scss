@@ -2,23 +2,163 @@
 @import 'materialize-css/dist/css/materialize';
 
 //custom color variables
-$primary-color: #3e4e9e !default;
-$primary-color-light: #717ad0 !default;
-$primary-color-dark: #00276f !default;
+$primary-color: #00766c !default;
+$primary-color-light-one: #26a69a !default;
+$primary-color-light-two: #64d8cb !default;
+
+$primary-color-light-three: #c1c1c1 !default;
 
 $active_row: #466193 !default;
 
-$secondary-color: #3e4e9e !default;
+$secondary-color: #00838f !default;
+$secondary-color-light: #afb3bf !default;
+$secondary-color-dark: #005662 !default;
+
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
 $link-color: color("light-blue", "darken-1") !default;
 
 //
 @import "~materialize-css/sass/materialize.scss";
-@import 'welcome/home.scss';
+@import 'layouts/header_sidenav/nav_bar.scss';
+@import 'layouts/header_sidenav/fixed_side_nav.scss';
 @import 'shared/choices.scss';
+@import 'shared/cards.scss';
 
-.scrollable {
-  overflow: scroll;
-  width: 100%;
+.wrapper {
+  padding-left: 72px;
+  padding-top: 15px;
+  padding-right: 10px;
+  @media #{$medium-and-down} { padding-left: 10px; }
+}
+
+body {
+  background-color: $primary-color-light-three;
+
+  #body_row {
+    margin-top: 25px;
+  }
+
+  #error_explanation {
+    background-color: #ffcdd2;
+    color: #b71c1c;
+    border-radius: 5px;
+    padding: 0 0 0 18px;
+    margin: 10px 0 0 0;
+    h2 {
+      font-size: 20px;
+      padding-top: 20px;
+    }
+    ul {
+      margin-top: 0px !important;
+      padding-bottom: 15px;
+    }
+  }
+
+  #flash_notice {
+    background-color: #a5d6a7;
+    color: #1b5e20;
+    border-radius: 5px;
+    padding: 10px 0 10px 20px;
+    margin: 10px 12px 0 12px;
+  }
+  #flash_alert {
+    background-color: #ffcdd2;
+    color: #b71c1c;
+    border-radius: 5px;
+    padding: 10px 0 10px 20px;
+    margin: 10px 12px 0 12px;
+  }
+
+  input:disabled {
+    -webkit-text-fill-color: $primary-color;
+    -webkit-opacity:1;
+  }
+
+  .link_color {
+    color: $primary-color;
+  }
+
+  .col.no_border {
+    padding: 0px !important;
+  }
+
+  .btn, .btn-large, .btn-small, .btn-floating {
+    color: $primary-color !important;
+    &:hover {
+      background-color: $secondary-color-dark;
+    }
+  }
+
+  .btn_big {
+    margin: 12px 0;
+    height: auto;
+    padding: 20px 24px 20px 24px !important;
+    font-size: 22px;
+  }
+
+  .scrollable {
+    overflow: scroll;
+    width: 100%;
+  }
+
+  .type_information {
+    img {
+      width: 100px;
+      margin: -10px 0px -15px -1px;
+    }
+  }
+
+  table {
+    color: $primary-color;
+    a { color: $primary-color; }
+
+    img {
+      width: 100px;
+      margin: -10px 0px -15px -1px;
+    }
+
+    .options_item {
+      padding: 5px 5px 1px 5px;
+      border-radius: 30px;
+      margin-right: 20px;
+
+      &.color_dark {
+        background: $primary-color-light-one;
+        i {
+          color: $secondary-color;
+        }
+      }
+      &.color_light {
+        background: $secondary-color;
+        i {
+          color: $primary-color-light-one;
+        }
+      }
+    }
+  }
+
+
+  .checkbox {
+    @media #{$medium-and-down} {
+      margin-bottom: 10px;
+    }
+    label {
+      label {
+        margin-left: -12px;
+      }
+    }
+  }
+  .switch {
+    margin-top: 12px;
+
+    .lever {
+      background-color: $secondary-color !important;
+      margin: 0px 12px 0px 10px !important;
+
+      &:after, &:before {
+        background-color: $primary-color !important;
+      }
+    }
+  }
 }

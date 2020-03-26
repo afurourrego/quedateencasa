@@ -1,0 +1,73 @@
+#slide-out {
+  .slide_user_options {
+    height: 60px;
+    background-color: $secondary-color-dark;
+
+    .slide_nav_icons {
+      margin-left: 3px !important;
+    }
+  }
+  &.sidenav-fixed{
+    top: 80px;
+    width: 60px;
+    li a {
+      background-color: $secondary-color !important;
+    }
+  }
+  background-color: #F5F5F6;
+  .divider {
+    margin: 0;
+    &.divider_first{
+      padding-top: 20px;
+    }
+  }
+
+  i { width: 35px; }
+
+  a {
+    .local_text{
+      font-size: 20px;
+      margin-left: -15px;
+      position: absolute;
+      margin-top: 7px;
+    }
+    padding: 0;
+    height: 60px;
+    i {
+      color: $primary-color-dark;
+      &.slide_nav_icons {
+        font-size: 46px;
+        padding: 7px 0 0 7px;
+
+        &.tire_models {
+          font-size: 38px;
+          padding: 5px 0 0 11px;
+        }
+      }
+      &.slide_mobile_icons {
+        height: 60px;
+        width: 60px;
+        background-color: $secondary-color !important;
+      }
+    }
+    img {
+      &.slide_nav_icons {
+        width: 38px;
+        margin: 10px 0px 0px 10px !important;
+      }
+      &.slide_mobile_icons {
+        height: 60px;
+        width: 60px;
+        margin: 0 32px 0 0 !important;
+        padding: 11px !important;
+        background-color: $secondary-color !important;
+      }
+    }
+  }
+
+}
+@media only screen and (min-width: 993px){
+  nav a.sidenav-trigger {
+    display: inherit;
+  }
+}
