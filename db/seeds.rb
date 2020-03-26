@@ -3,6 +3,8 @@
 p 'Seed User'
 ['cristhian.u@devappstudio.com'].each do |email|
   User.new(email: email,
+           name: 'Cristhian',
+           phone: '123456789',
            password: '123456',
            password_confirmation: '123456',
            role: 'super_admin',
@@ -10,6 +12,8 @@ p 'Seed User'
 end
 ['company@covii.com'].each do |email|
   User.new(email: email,
+           name: 'Company',
+           phone: '123456789',
            password: '123456',
            password_confirmation: '123456',
            role: 'company',
