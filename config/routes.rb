@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :locations
-  resources :cities
-  resources :states
-  resources :countries
   get 'welcome/home'
 
   devise_for :users, controllers: { invitations: 'invitations' }
   resources :users
+  resources :countries
+  resources :states
+  resources :cities
+  resources :locations
 
   root 'welcome#home'
   get '*route_not_found.:format', to: 'application#route_not_found'
