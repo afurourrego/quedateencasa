@@ -19,7 +19,7 @@
 
     <div class="wrapper">
       <div id="body_row" class="row">
-        <div class="col s12">
+        <div class="col s12 no_border">
           <% flash.each do |name, msg| %>
             <%= content_tag :div, msg.to_s.html_safe, id: "flash_#{name}" %>
           <% end %>

@@ -6,7 +6,7 @@ $primary-color: #00766c !default;
 $primary-color-light-one: #26a69a !default;
 $primary-color-light-two: #64d8cb !default;
 
-$primary-color-light-three: #c1c1c1 !default;
+$primary-color-light-three: #e8e8e8 !default;
 
 $active_row: #466193 !default;
 
@@ -26,10 +26,13 @@ $link-color: color("light-blue", "darken-1") !default;
 @import 'shared/cards.scss';
 
 .wrapper {
-  padding-left: 72px;
-  padding-top: 15px;
+  padding-left: 10px;
   padding-right: 10px;
-  @media #{$medium-and-down} { padding-left: 10px; }
+  padding-top: 15px;
+  @media #{$medium-and-down} {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 body {
