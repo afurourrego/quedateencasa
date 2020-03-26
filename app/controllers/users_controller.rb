@@ -9,7 +9,9 @@ class UsersController < ApplicationController
     @users = User.search(@users, user_params_search)
   end
 
-  def show; end
+  def show
+    @locations = @user.locations
+  end
 
   def edit; end
 
