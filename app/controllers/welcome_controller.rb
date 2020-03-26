@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
 
 
   def home
-    @locations = Location.all.search(location_params_search)
+    @locations = Location.order('category ASC, name ASC').search(location_params_search)
   end
 
   private
