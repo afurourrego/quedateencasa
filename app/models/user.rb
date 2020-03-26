@@ -29,6 +29,10 @@ class User < ApplicationRecord
     users
   end
 
+  def max_level
+    LEVEL
+  end
+
   private
 
   def self.current

@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
 p 'Seed User'
-['cristhian.u@devappstudio.com'].each do |email|
+['cristhianu92@gmail.com'].each do |email|
   User.new(email: email,
            name: 'Cristhian',
-           phone: '123456789',
-           password: '123456',
-           password_confirmation: '123456',
+           phone: '3113495178',
+           password: '12MayaSimpson',
+           password_confirmation: '12MayaSimpson',
            role: 'super_admin',
            level: 1).save(validate: false)
 end
-['company@covii.com'].each do |email|
-  User.new(email: email,
-           name: 'Company',
-           phone: '123456789',
-           password: '123456',
-           password_confirmation: '123456',
-           role: 'company',
-           level: 1).save(validate: false)
-end
+# ['company@covii.com'].each do |email|
+#   User.new(email: email,
+#            name: 'Company',
+#            phone: '123456789',
+#            password: '123456',
+#            password_confirmation: '123456',
+#            role: 'company',
+#            level: 1).save(validate: false)
+# end
 
 
 p 'Seed Country'
