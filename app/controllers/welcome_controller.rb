@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+  skip_before_action :authenticate_user!, only: :home
+
 
   def home
     @locations = Location.all.search(location_params_search)
