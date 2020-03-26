@@ -87,7 +87,6 @@ body {
   }
 
   .btn, .btn-large, .btn-small, .btn-floating {
-    color: $primary-color !important;
     &:hover {
       background-color: $secondary-color-dark;
     }
