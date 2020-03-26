@@ -87,6 +87,8 @@ body {
   }
 
   .btn, .btn-large, .btn-small, .btn-floating {
+    color: white !important;
+    input { color: white !important; }
     &:hover {
       background-color: $secondary-color-dark;
     }
