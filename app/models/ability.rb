@@ -3,6 +3,7 @@
 class Ability
   include CanCan::Ability
   include Levels::SuperAdmin
+  include Levels::Company
 
   def initialize(user)
     @user = user
