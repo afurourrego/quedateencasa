@@ -68,3 +68,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'cancancan'
 gem 'devise'
 gem 'devise_invitable', '~> 2.0.0'
+gem 'serviceworker-rails'

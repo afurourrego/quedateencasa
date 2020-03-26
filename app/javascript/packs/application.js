@@ -11,4 +11,5 @@ require('channels');
 import '../stylesheets/application';
 import 'materialize-css/dist/js/materialize';
 import 'choices.js/public/assets/scripts/choices.min.js';
+import '../../assets/javascripts/serviceworker-companion.js';
 import 'controllers';
