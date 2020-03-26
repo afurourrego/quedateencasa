@@ -19,6 +19,7 @@ export default class extends Controller {
 
     this.slidOutMenu  = document.querySelector('#slide-out');
     this.choiceSelect = document.querySelectorAll('.js-choice');
+    this.autocomplete = document.querySelectorAll('.autocomplete');
 
     if (this.slidOutMenu) { this.slideOutMenuInstance = new M.Sidenav(this.slidOutMenu); }
 
