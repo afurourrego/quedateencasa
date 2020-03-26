@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :role, :level, presence: true
 
-  enum role: { 'super_admin': 1 }
+  enum role: { 'super_admin': 1, 'company': 2 }
   LEVEL = [1].freeze
 
   def self.search(users, params)
