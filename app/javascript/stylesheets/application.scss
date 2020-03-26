@@ -87,6 +87,8 @@ body {
   }
 
   .btn, .btn-large, .btn-small, .btn-floating {
+    box-shadow: none !important;
+    border-radius: 0px;
     color: white !important;
     input { color: white !important; }
     &:hover {
