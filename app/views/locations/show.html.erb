@@ -1,34 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="col s12">
+  <div class="card">
+    <div class="card-action card_action_title">
+      <span class="card-title white-text">Empresa</span>
+      <%= link_to 'EDITAR', edit_location_path(@location), class:"actions waves-effect waves-light btn right action_button_card action_button_card_first_right" %>
+      <% if current_user.super_admin? %>
+        <%= link_to 'ATRAS', locations_path, class:"actions waves-effect waves-light btn right action_button_card" %>
+      <% elsif current_user.company? %>
+        <%= link_to 'ATRAS', current_user, class:"actions waves-effect waves-light btn right action_button_card" %>
+      <% end %>
+    </div>
+    <div class="card-content">
+      <div class="row card_content_row">
+        <div class="input-field col s6">
+          <input disabled value="<%= @location.name&.titleize %>" type="text" class="validate">
+          <label>Nombre</label>
+        </div>
+        <div class="input-field col s6">
+          <input disabled value="<%= @location.phone %>" type="text" class="validate">
+          <label>Teléfonos</label>
+        </div>
+        <div class="input-field col s12">
+          <input disabled value="<%= @location.category&.titleize %>" type="text" class="validate">
+          <label>Servicios</label>
+        </div>
+        <div class="input-field col s6">
+          <input disabled value="<%= @location.state&.name&.titleize %>" type="text" class="validate">
+          <label>Departamento</label>
+        </div>
+        <div class="input-field col s6">
+          <input disabled value="<%= @location.city&.name&.titleize %>" type="text" class="validate">
+          <label>Ciudad o Municipio</label>
+        </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @location.name %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @location.phone %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @location.category %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @location.state_id %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @location.city_id %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @location.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+        <% if current_user.super_admin? %>
+          <div class="input-field col s12 m4">
+            <input disabled value="<%= @user.email %>" type="text" class="validate">
+            <label>Usuario</label>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
