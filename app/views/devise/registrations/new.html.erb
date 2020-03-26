@@ -1,10 +1,9 @@
 <div class="card_container">
   <span class="helper"></span>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="col s12 m6 offset-m3">
+  <div class="col s12 m6 offset-m3">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
       <div class="card">
         <div class="card-action card_action_title with_out_title">
           <%= f.button :button, type: :submit, class:"actions waves-effect waves-light btn right action_button_card action_button_card_first_right" do %>
@@ -21,11 +20,11 @@
               </div>
               <div class="input-field col s12 m6">
                 <%= f.label :name, 'Nombre' %>
-                <%= f.email_field :name %>
+                <%= f.text_field :name %>
               </div>
               <div class="input-field col s12 m6">
                 <%= f.label :phone, 'Teléfono' %>
-                <%= f.email_field :phone %>
+                <%= f.text_field :phone %>
               </div>
 
               <div class="input-field col s6">
@@ -47,6 +46,6 @@
       <div class="center">
         <%= render "devise/shared/links" %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
