@@ -68,3 +68,5 @@ gem 'devise'
 gem 'devise_invitable', '~> 2.0.0'
 gem 'serviceworker-rails'
 gem "paranoia", "~> 2.2"
+gem 'will_paginate', '~> 3.1.7'
+gem 'will_paginate-materialize'

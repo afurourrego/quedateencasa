@@ -9,6 +9,8 @@ class Location < ApplicationRecord
 
   validates :name, :phone, :category, :state_id, :city_id, presence: true
 
+  self.per_page = 10
+
   scope :by_name, ->(name) {
     search = "%#{name&.strip}%"
     where('lower(name) LIKE ?', search.downcase)

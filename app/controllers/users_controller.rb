@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
@@ -10,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @locations = @user.locations
+    @locations = @user.locations.order('city_id ASC, category ASC, name ASC').page(params[:page])
   end
 
   def edit; end
