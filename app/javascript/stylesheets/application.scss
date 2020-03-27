@@ -73,6 +73,10 @@ body {
     margin: 10px 12px 0 12px;
   }
 
+  .banner_header {
+    width: 100%;
+  }
+
   input:disabled {
     -webkit-text-fill-color: $primary-color;
     -webkit-opacity:1;
