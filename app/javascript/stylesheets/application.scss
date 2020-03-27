@@ -105,6 +105,10 @@ body {
     &:hover {
       background-color: $secondary-color-dark;
     }
+
+    &.btn_register {
+      width: -webkit-fill-available;
+    }
   }
 
   .btn_big {
