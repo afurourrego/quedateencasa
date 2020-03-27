@@ -27,7 +27,7 @@ class LocationsController < ApplicationController
   # POST /locations.json
   def create
     @location = Location.new(location_params)
-
+    @location.user_id = current_user.id 
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: 'Location was successfully created.' }
@@ -58,7 +58,11 @@ class LocationsController < ApplicationController
   def destroy
     @location.destroy
     respond_to do |format|
-      format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
+      if current_user.super_admin?
+        format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
+      elsif current_user.company?
+        format.html { redirect_to current_user, notice: 'Location was successfully destroyed.' }
+      end
       format.json { head :no_content }
     end
   end

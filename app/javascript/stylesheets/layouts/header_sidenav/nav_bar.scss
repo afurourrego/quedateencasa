@@ -1,6 +1,6 @@
 nav.nav-dev_app {
   box-shadow: none !important;
-  background-color: $primary-color !important;
+  background-color: $primary-color-light-one !important;
   height: 80px !important;
   a{
     &.sidenav-trigger {
@@ -14,7 +14,7 @@ nav.nav-dev_app {
     }
     img.brand__logo {
       height: -webkit-fill-available;
-      padding-top: 10px;
+      padding-top: 23px;
     }
   }
 }
