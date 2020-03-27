@@ -24,6 +24,7 @@ $link-color: color("light-blue", "darken-1") !default;
 @import 'layouts/header_sidenav/fixed_side_nav.scss';
 @import 'shared/choices.scss';
 @import 'shared/cards.scss';
+@import 'shared/will_paginate.scss';
 
 .wrapper {
   padding-left: 10px;

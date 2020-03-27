@@ -1,4 +1,5 @@
 class Location < ApplicationRecord
+  acts_as_paranoid
 
   include Searchable
 
@@ -7,6 +8,8 @@ class Location < ApplicationRecord
   belongs_to :user
 
   validates :name, :phone, :category, :state_id, :city_id, presence: true
+
+  self.per_page = 10
 
   scope :by_name, ->(name) {
     search = "%#{name&.strip}%"
