@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
 
 
   def home
-    @locations = Location.order('city_id ASC, category ASC, name ASC').search(location_params_search)
+    @locations = Location.search(location_params_search).joins(:city).merge(City.order(name: :asc)).order('category ASC, name ASC')
     @locations = @locations.page(params[:page])
   end
 
