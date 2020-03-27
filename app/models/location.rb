@@ -6,6 +6,8 @@ class Location < ApplicationRecord
   belongs_to :city
   belongs_to :user
 
+  validates :name, :phone, :category, :state_id, :city_id, presence: true
+
   scope :by_name, ->(name) {
     search = "%#{name&.strip}%"
     where('lower(name) LIKE ?', search.downcase)
