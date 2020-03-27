@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @locations = @user.locations.order('city_id ASC, category ASC, name ASC').page(params[:page])
+    @locations = @user.locations.order('city_id ASC, category ASC, name ASC')
+    @locations = @locations.page(params[:page])
   end
 
   def edit; end
