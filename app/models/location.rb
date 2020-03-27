@@ -8,6 +8,7 @@ class Location < ApplicationRecord
   belongs_to :user
 
   validates :name, :phone, :category, :state_id, :city_id, presence: true
+  validates_uniqueness_of :name
 
   self.per_page = 10
 

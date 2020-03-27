@@ -34,6 +34,10 @@ class User < ApplicationRecord
     LEVEL
   end
 
+  def self.list_users
+    User.pluck(:email, :id)
+  end
+
   private
 
   def self.current

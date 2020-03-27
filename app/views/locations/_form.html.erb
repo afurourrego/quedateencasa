@@ -52,9 +52,9 @@
           </div>
 
           <% if current_user.super_admin? %>
-            <div class="input-field col s12 m4">
-              <%= form.label :user_id %>
-              <%= form.text_field :user_id %>
+            <div class="input-field col s6">
+              <%= form.collection_select :user_id, User.list_users, :second, ->(user) { user.first.titleize }, {}, { class: 'js-choice' } %>
+              <%= form.label :user_id, 'Usuario', class: 'active' %>
             </div>
           <% end %>
         </div>
