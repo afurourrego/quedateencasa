@@ -1,4 +1,5 @@
 class Location < ApplicationRecord
+  acts_as_paranoid
 
   include Searchable
 
