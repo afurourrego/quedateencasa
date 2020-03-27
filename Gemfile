@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -69,3 +67,4 @@ gem 'cancancan'
 gem 'devise'
 gem 'devise_invitable', '~> 2.0.0'
 gem 'serviceworker-rails'
+gem "paranoia", "~> 2.2"

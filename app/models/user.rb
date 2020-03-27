@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  acts_as_paranoid
 
   has_many :locations
   # Include default devise modules. Others available are:
