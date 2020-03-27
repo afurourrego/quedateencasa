@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :name, :phone, :role, :level, presence: true
+  validates :role, :level, presence: true
 
   enum role: { 'super_admin': 1, 'company': 2 }
   LEVEL = [1].freeze

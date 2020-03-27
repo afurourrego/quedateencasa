@@ -29,6 +29,6 @@ class InvitationsController < Devise::InvitationsController
   end
 
   def user_params
-    params.require(:user).permit(:email, :role, :level)
+    params.require(:user).permit(:email, :name, :phone, :role, :level)
   end
 end
