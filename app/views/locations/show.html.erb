@@ -34,7 +34,7 @@
 
         <% if current_user.super_admin? %>
           <div class="input-field col s12 m4">
-            <input disabled value="<%= @user.email %>" type="text" class="validate">
+            <input disabled value="<%= @location.user&.email %>" type="text" class="validate">
             <label>Usuario</label>
           </div>
         <% end %>
