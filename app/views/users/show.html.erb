@@ -1,0 +1,41 @@
+<div class="col s12">
+  <div class="card">
+    <div class="card-action card_action_title">
+      <span class="card-title white-text">Usuario</span>
+      <%= link_to 'EDITAR', edit_user_path(@user), class:"actions waves-effect waves-light btn right action_button_card action_button_card_first_right" %>
+      <% if current_user.super_admin? %>
+        <%= link_to 'ATRAS', users_path, class:"actions waves-effect waves-light btn right action_button_card" %>
+      <% end %>
+    </div>
+    <div class="card-content">
+      <div class="row card_content_row">
+        <div class="input-field col s12 m4">
+          <input disabled value="<%= @user.name&.titleize %>" type="text" class="validate">
+          <label>Nombre</label>
+        </div>
+        <div class="input-field col s12 m4">
+          <input disabled value="<%= @user.email %>" type="text" class="validate">
+          <label>Email</label>
+        </div>
+        <div class="input-field col s12 m4">
+          <input disabled value="<%= @user.phone %>" type="text" class="validate">
+          <label>Teléfono</label>
+        </div>
+
+        <% if current_user.super_admin? %>
+          <div class="input-field col s12 m4">
+            <input disabled value="<%= @user.role.titleize %>" type="text" class="validate">
+            <label><%= t("users.role") %></label>
+          </div>
+
+          <div class="input-field col s12 m4">
+            <input disabled value="<%= @user.level %>" type="text" class="validate">
+            <label><%= t("users.level") %></label>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render partial: 'locations/list_location' %>

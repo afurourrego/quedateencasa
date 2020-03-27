@@ -1,0 +1,23 @@
+inherit_from: .rubocop_todo.yml
+
+# Commonly used screens these days easily fit more than 80 characters.
+Metrics/LineLength:
+  # This will disable the rule completely, regardless what other options you put
+  Enabled: false
+  # Change the default 80 chars limit value
+  Max: 130
+
+Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context' , 'switch', 'define', 'configure']

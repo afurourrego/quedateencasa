@@ -1,0 +1,51 @@
+<div class="card_container">
+  <span class="helper"></span>
+
+  <div class="col s12 m6 offset-m3">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="card">
+        <div class="card-action card_action_title with_out_title">
+          <%= f.button :button, type: :submit, class:"actions waves-effect waves-light btn right action_button_card action_button_card_first_right" do %>
+          REGISTRARSE
+          <% end %>
+        </div>
+        <div class="card-content">
+          <div class="row">
+            <div class="col s12 m10 offset-m1">
+
+              <div class="input-field col s12">
+                <%= f.label :email, 'Email' %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+              </div>
+              <div class="input-field col s12 m6">
+                <%= f.label :name, 'Nombre' %>
+                <%= f.text_field :name %>
+              </div>
+              <div class="input-field col s12 m6">
+                <%= f.label :phone, 'Teléfono' %>
+                <%= f.text_field :phone %>
+              </div>
+
+              <div class="input-field col s6">
+                <%= f.label :password, 'Contraseña' %>
+                <%= f.password_field :password, autocomplete: "new-password" %>
+                <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %>
+              </div>
+
+              <div class="input-field col s6">
+                <%= f.label :password_confirmation, 'Confirmar Contraseña' %>
+                <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="center">
+        <%= render "devise/shared/links" %>
+      </div>
+    <% end %>
+  </div>
+</div>

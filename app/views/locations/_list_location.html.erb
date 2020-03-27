@@ -1,0 +1,101 @@
+<div class="col s12">
+  <div class="card">
+    <div class="card-action card_action_title">
+      <span class="card-title white-text">
+        <% if current_user.super_admin? %>
+          Empresas
+        <% else %>
+          Mis Empresas
+        <% end %>
+      </span>
+      <%= link_to 'NUEVA', new_location_path, class:"actions waves-effect waves-light btn right action_button_card action_button_card_first_right" %>
+    </div>
+    <div class="card-content">
+      <div class="col s12 search_box">
+        <%= form_tag nil, method: :get do %>
+          <div class="input-field col s6 m3">
+            <%= text_field_tag(:local_search_category, params[:local_search]&.fetch(:category),
+                                                   name: "local_search[category]",
+                                                   class: "filter-metadata-selector apps autocomplete",
+                                                   autocomplete: 'off',
+                                                   data: { list_names: Location.hash_list_categories.to_json }) %>
+            <%= label_tag :category,'Servicio'%>
+          </div>
+          <div class="input-field col s6 m3">
+            <%= text_field_tag(:local_search_name, params[:local_search]&.fetch(:name),
+                                                   name: "local_search[name]",
+                                                   class: "filter-metadata-selector apps autocomplete",
+                                                   autocomplete: 'off',
+                                                   data: { list_names: Location.hash_list_names.to_json }) %>
+            <%= label_tag :name,'Empresa'%>
+          </div>
+          <div class="input-field col s6 m3">
+            <%= text_field_tag(:local_search_state, params[:local_search]&.fetch(:state),
+                                                   name: "local_search[state]",
+                                                   class: "filter-metadata-selector apps autocomplete",
+                                                   autocomplete: 'off',
+                                                   data: { list_names: State.hash_list_names.to_json }) %>
+            <%= label_tag :state,'Estado'%>
+          </div>
+          <div class="input-field col s6 m3">
+            <%= text_field_tag(:local_search_city, params[:local_search]&.fetch(:city),
+                                                   name: "local_search[city]",
+                                                   class: "filter-metadata-selector apps autocomplete",
+                                                   autocomplete: 'off',
+                                                   data: { list_names: City.hash_list_names.to_json }) %>
+            <%= label_tag :city,'Ciudad'%>
+          </div>
+
+          <%= button_tag :button, type: :submit, class: 'button_search waves-effect waves-light btn right col s12 m2 l2' do %>
+            BUSCAR
+          <% end %>
+        <% end %>
+      </div>
+      <div class="scrollable">
+        <table class="striped">
+          <thead>
+            <tr>
+              <th>Empresa</th>
+              <th>Servicio</th>
+              <th>Telefonos</th>
+              <th>Ciudad</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @locations.each do |location| %>
+              <tr>
+                <td><%= location.name %></td>
+                <td><%= location.category&.titleize %></td>
+                <td><%= location.phone %></td>
+                <td><%= location.city.name&.titleize %></td>
+                <td>
+                  <% if can? :show, Location %>
+                    <%= link_to location do %>
+                      <i class="material-icons">pageview</i>
+                    <% end %>
+                  <% end %>
+                </td>
+                <td>
+                  <% if can? :update, Location %>
+                    <%= link_to edit_location_path(location) do %>
+                      <i class="material-icons">edit</i>
+                    <% end %>
+                  <% end %>
+                </td>
+                <td>
+                  <% if can? :destroy, Location %>
+                    <%= link_to location, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                      <i class="material-icons">delete</i>
+                    <% end %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
