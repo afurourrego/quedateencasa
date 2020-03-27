@@ -77,6 +77,12 @@ body {
     width: 100%;
   }
 
+  .creator_div {
+    position: fixed;
+    bottom: 60px;
+    width: -webkit-fill-available;
+  }
+
   input:disabled {
     -webkit-text-fill-color: $primary-color;
     -webkit-opacity:1;
