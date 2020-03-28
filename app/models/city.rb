@@ -3,8 +3,9 @@ class City < ApplicationRecord
 
   belongs_to :state
 
-  def self.hash_list_names
-    City.pluck(:name).each_with_object({}) { |str, hsh| hsh[str] = nil }
+  def self.list_names
+    cities_id = Location.pluck(:city_id).uniq
+    City.where(id: cities_id).pluck(:name).map(&:titleize)
   end
 
   def self.list_cities
