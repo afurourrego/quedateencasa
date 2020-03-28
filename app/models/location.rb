@@ -39,4 +39,8 @@ class Location < ApplicationRecord
     Location.pluck(:name).each_with_object({}) { |str, hsh| hsh[str] = nil }
   end
 
+  def separation_phone
+    self.phone.to_s.gsub("/","<br>").html_safe
+  end
+
 end
