@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @locations = @user.locations.order('city_id ASC, category ASC, name ASC')
+    @locations = @user.locations.search(location_params_search).order('city_id ASC, category ASC, name ASC')
     @locations = @locations.page(params[:page])
   end
 
@@ -42,5 +42,11 @@ class UsersController < ApplicationController
 
   def user_params_search
     params.permit(:email, :role, :level)
+  end
+
+  def location_params_search
+      return {} unless params.key?(:local_search)
+      params.require(:local_search)
+            .permit(:name, :category, :state, :city)
   end
 end

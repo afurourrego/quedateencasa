@@ -6,7 +6,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all.page(params[:page])
+    @locations = Location.search(location_params_search).page(params[:page])
   end
 
   # GET /locations/1
@@ -75,6 +75,12 @@ class LocationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def location_params
-      params.require(:location).permit(:name, :phone, :category, :state_id, :city_id, :user_id)
+      params.require(:location).permit(:name, :phone, :category, :state, :city, :user_id)
+    end
+
+    def location_params_search
+        return {} unless params.key?(:local_search)
+        params.require(:local_search)
+              .permit(:name, :category, :state, :city)
     end
 end
