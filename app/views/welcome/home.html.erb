@@ -29,7 +29,7 @@
           <div class="input-field col s6 m3">
             <%= select_tag :local_search_state, options_from_collection_for_select(State.list_names, :to_s, :to_s,
                                                                                   params[:local_search]&.fetch(:state)),
-                                                                                  { include_blank: 'Ninguna',
+                                                                                  { include_blank: 'Ninguno',
                                                                                     name: "local_search[state]",
                                                                                     class: 'js-choice filter-metadata-selector apps',
                                                                                     autocomplete: 'off' }  %>

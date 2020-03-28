@@ -30,20 +30,23 @@
             <%= label_tag :name,'Empresa'%>
           </div>
           <div class="input-field col s6 m3">
-            <%= text_field_tag(:local_search_state, params[:local_search]&.fetch(:state),
-                                                   name: "local_search[state]",
-                                                   class: "filter-metadata-selector apps autocomplete",
-                                                   autocomplete: 'off',
-                                                   data: { list_names: State.hash_list_names.to_json }) %>
-            <%= label_tag :state,'Estado'%>
+            <%= select_tag :local_search_state, options_from_collection_for_select(State.list_names, :to_s, :to_s,
+                                                                                  params[:local_search]&.fetch(:state)),
+                                                                                  { include_blank: 'Ninguno',
+                                                                                    name: "local_search[state]",
+                                                                                    class: 'js-choice filter-metadata-selector apps',
+                                                                                    autocomplete: 'off' }  %>
+            <%= label_tag :state,'Departamento', class: 'active' %>
           </div>
+
           <div class="input-field col s6 m3">
-            <%= text_field_tag(:local_search_city, params[:local_search]&.fetch(:city),
-                                                   name: "local_search[city]",
-                                                   class: "filter-metadata-selector apps autocomplete",
-                                                   autocomplete: 'off',
-                                                   data: { list_names: City.hash_list_names.to_json }) %>
-            <%= label_tag :city,'Ciudad'%>
+            <%= select_tag :local_search_city, options_from_collection_for_select(City.list_names, :to_s, :to_s,
+                                                                                  params[:local_search]&.fetch(:city)),
+                                                                                  { include_blank: 'Ninguna',
+                                                                                    name: "local_search[city]",
+                                                                                    class: 'js-choice filter-metadata-selector apps',
+                                                                                    autocomplete: 'off' }  %>
+            <%= label_tag :city,'Ciudad', class: 'active' %>
           </div>
 
           <%= button_tag :button, type: :submit, class: 'button_search waves-effect waves-light btn right col s12 m2 l2' do %>
