@@ -30,7 +30,7 @@ class LocationsController < ApplicationController
     @location.user_id = current_user.id
     respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
+        format.html { redirect_to @location, notice: 'La Empresa fue creada con éxito.' }
         format.json { render :show, status: :created, location: @location }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class LocationsController < ApplicationController
   def update
     respond_to do |format|
       if @location.update(location_params)
-        format.html { redirect_to @location, notice: 'Location was successfully updated.' }
+        format.html { redirect_to @location, notice: 'La Empresa fue actualizada con éxito.' }
         format.json { render :show, status: :ok, location: @location }
       else
         format.html { render :edit }
@@ -59,9 +59,9 @@ class LocationsController < ApplicationController
     @location.destroy
     respond_to do |format|
       if current_user.super_admin?
-        format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
+        format.html { redirect_to locations_url, notice: 'La Empresa fue destruida con éxito.' }
       elsif current_user.company?
-        format.html { redirect_to current_user, notice: 'Location was successfully destroyed.' }
+        format.html { redirect_to current_user, notice: 'La Empresa fue destruida con éxito.' }
       end
       format.json { head :no_content }
     end
