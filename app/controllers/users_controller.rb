@@ -10,6 +10,10 @@ class UsersController < ApplicationController
   def show
     @locations = @user.locations.search(location_params_search).order('city_id ASC, category ASC, name ASC')
     @locations = @locations.page(params[:page])
+
+    if User.current&.name.blank? || User.current&.phone.blank?
+      flash[:blue] = %Q[:( Vaya, parece que aún no completas tu perfil, puedes hacerlo <a href="/users/#{User.current.id}/edit">[aquí]</a>]
+    end
   end
 
   def edit; end
